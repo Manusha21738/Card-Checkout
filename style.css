@@ -1,0 +1,301 @@
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #ffffff;
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e0c29;
+    background: linear-gradient(to right, #2b243e, #2b3a63, #0c1f29);
+    overflow: hidden;
+}
+
+/* Background Animated Shapes */
+.background-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+.shape-1 {
+    top: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background: #ff002b;
+}
+
+.shape-2 {
+    bottom: -80px;
+    right: -50px;
+    width: 350px;
+    height: 350px;
+    background: #333399;
+}
+
+.shape-3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: #00d2ff;
+    opacity: 0.6;
+}
+
+/* Glass Container */
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(249, 2, 2, 0.37);
+    align-items: center;
+}
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+}
+
+/* --- Credit Card 3D Styles --- */
+.card-container {
+    perspective: 1000px;
+    width: 350px;
+    height: 220px;
+}
+
+.card-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.card-wrapper.flip {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+    border: 1px solid rgba(151, 8, 8, 0.582);
+    box-shadow: 0 15px 35px rgba(54, 4, 219, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-front {
+    z-index: 2;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    padding: 0; /* Reset padding for back elements */
+}
+
+/* Card Elements */
+.chip {
+    width: 50px;
+    height: 35px;
+    background: linear-gradient(135deg, #d4af37, #f2d06b);
+    border-radius: 6px;
+    position: relative;
+}
+
+.chip::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.3);
+}
+
+.card-logo {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    color: #fff;
+}
+
+.card-number {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 22px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-top: 20px;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #eee;
+}
+
+.label {
+    font-size: 10px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.info {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Card Back Elements */
+.magnetic-strip {
+    width: 100%;
+    height: 45px;
+    background: #000;
+    margin-top: 25px;
+    opacity: 0.8;
+}
+
+.signature-area {
+    margin: 15px 25px;
+    height: 35px;
+    background: #eee;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-family: 'Rock Salt', cursive; /* Optional fancy font */
+    color: #333;
+}
+
+.cvv-area {
+    margin: 0 25px;
+    text-align: right;
+}
+
+.cvv-box {
+    background: #fff;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.back-logo {
+    top: auto;
+    bottom: 25px;
+}
+
+/* --- Checkout Form --- */
+.checkout-form {
+    width: 350px;
+    color: #fff;
+}
+
+.checkout-form h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 12px;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+input, select {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.date-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+select {
+    width: 100%;
+}
+
+option {
+    background: #24243e; /* Solid background for dropdowns */
+    color: #fff;
+}
+
+.pay-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: var(--primary-gradient);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pay-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+.pay-btn:active {
+    transform: translateY(0);
+}

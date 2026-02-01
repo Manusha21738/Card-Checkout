@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Card Checkout Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="container">
+        
+        <div class="card-container">
+            <div class="card-wrapper" id="card-wrapper">
+                
+                <div class="card-face card-front">
+                    <div class="chip"></div>
+                    <div class="card-logo">VISA</div>
+                    <div class="card-number" id="display-number">#### #### #### ####</div>
+                    <div class="card-details">
+                        <div class="detail-group">
+                            <span class="label">Card Holder</span>
+                            <span class="info" id="display-name">FULL NAME</span>
+                        </div>
+                        <div class="detail-group">
+                            <span class="label">Expires</span>
+                            <span class="info" id="display-date">MM/YY</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-face card-back">
+                    <div class="magnetic-strip"></div>
+                    <div class="signature-area">
+                        <span id="display-signature"></span>
+                    </div>
+                    <div class="cvv-area">
+                        <span class="label">CVV</span>
+                        <div class="cvv-box" id="display-cvv">***</div>
+                    </div>
+                    <div class="card-logo back-logo">VISA</div>
+                </div>
+
+            </div>
+        </div>
+
+        <form class="checkout-form">
+            <h2>Payment Details</h2>
+            
+            <div class="input-group">
+                <label>Card Number</label>
+                <input type="text" id="input-number" maxlength="19" placeholder="1234 5678 1234 5678">
+            </div>
+
+            <div class="input-group">
+                <label>Card Holder</label>
+                <input type="text" id="input-name" maxlength="24" placeholder="Manusha Denuwan">
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Expiration Date</label>
+                    <div class="date-inputs">
+                        <select id="input-month">
+                            <option value="" disabled selected>Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        <select id="input-year">
+                            <option value="" disabled selected>Year</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                            <option value="30">2030</option>
+                            <option value="31">2031</option>
+                            <option value="32">2032</option>
+                            <option value="33">2033</option>
+                            <option value="34">2034</option>
+                            <option value="35">2035</option>
+                            <option value="36">2036</option>
+                            <option value="37">2037</option>
+                            <option value="38">2038</option>
+                            <option value="39">2039</option>
+                            <option value="40">2040</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>CVV</label>
+                    <input type="password" id="input-cvv" maxlength="3" placeholder="123">
+                </div>
+            </div>
+
+            <button type="button" class="pay-btn">Pay Now</button>
+        </form>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
